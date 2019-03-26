@@ -1,0 +1,21 @@
+﻿Styrbeteende:
+
+Accelererar mot musen
+Seperation - Space (puttar från varandra)
+Group - kraft mot gruppens medelposition
+
+En ray(cast) för att detektera väggar. Använder rayens vinkel för att 
+räkna ut en motkraft baserat på skeppets hastighet.
+
+Positivt:
+* Hittar en väg
+* Håller sig i en grupp
+* Fastnar inte i varandra
+* Mindre rays = mindre uträkningar
+
+Negativt:
+* Hittar inte den snabaste vägen
+* Problem med långa väggar
+* Fler rays hjälper skeppen att studsa mjukare mot väggarna
+* Påminner mer om vätska som sugs mot ett svart hål
+
