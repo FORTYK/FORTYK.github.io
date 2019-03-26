@@ -203,14 +203,8 @@ class Game {
         this.dharma = this.getPositionInType("f", 7);
         this.docks = {};
         this.docks.position = this.getPositionInType("s", 1);
-        this.docks.closestWater = this.getClosestOfType(this.world, this.docks.position, "w", 100);
-        this.docks.closestBeach = this.getClosestOfType(this.island, this.docks.position, "b", 100);
-
-        let a = this.docks.closestWater;
-        let b = this.docks.closestBeach;
-
-        //let delta = a.difference(b);
-
+        this.docks.closestWater = this.getClosestOfType(this.world, this.docks.position, "w", 30);
+        this.docks.closestBeach = this.getClosestOfType(this.island, this.docks.position, "b", 30);
 
         this.render();
     }
