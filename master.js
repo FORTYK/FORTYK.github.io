@@ -203,8 +203,8 @@ class Game {
         this.dharma = this.getPositionInType("f", 7);
         this.docks = {};
         this.docks.position = this.getPositionInType("s", 1);
-        this.docks.closestWater = this.getClosestOfType(this.world, this.docks.position, "w", 30);
-        this.docks.closestBeach = this.getClosestOfType(this.island, this.docks.position, "b", 30);
+        this.docks.closestWater = this.getClosestOfType(this.world, this.docks.position, "w", 14);
+        this.docks.closestBeach = this.getClosestOfType(this.island, this.docks.position, "b", 14);
 
         this.render();
     }
@@ -370,12 +370,12 @@ class Game {
     renderHUD() {
 
         this.ctx.fillStyle = "#000";
-        let diff = this.docks.closestWater.difference(this.docks.closestBeach);
 
         this.ctx.fillText("Crash site", this.crash_site.x - 35, this.crash_site.y + 12 + 16);
         this.ctx.fillText("Dharma", this.dharma.x - 28, this.dharma.y + 12 + 16);
 
         if (this.docks.position !== null && this.docks.closestWater !== null && this.docks.closestBeach !== null) {
+            let diff = this.docks.closestWater.difference(this.docks.closestBeach);
             this.ctx.fillText("Dock", this.docks.closestBeach.x + diff.x - 20, this.docks.closestBeach.y + diff.y + 12 + 16);
         }
 
